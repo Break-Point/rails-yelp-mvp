@@ -10,8 +10,8 @@
 <ul>
   <% @restaurant.reviews.each do |review| %>
     <li>
-      <%= review.rating %>⭐
       <%= review.content %>
+      <%= "⭐" * review.rating %>
     </li>
   <% end %>
 </ul>
