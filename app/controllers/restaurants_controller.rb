@@ -5,7 +5,12 @@ class RestaurantsController < ApplicationController
     @restaurants = Restaurant.all
   end
 
-  def show; end
+  def show
+    if params[:review].present? 
+      raise
+      @review = params.require(:review).permit(:rating, :content)
+    end
+  end
 
   def new
     @restaurant = Restaurant.new
